@@ -1,0 +1,89 @@
+html, body
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin: 0
+    padding: 0
+    
+.game
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 100vh
+    background: url("../../img/fundo.jpg")
+    background-repeat: no-repeat
+    background-size: 100vw 100vh
+    
+#pontuacao
+    display: flex
+    flex-direction: row
+    align-items: center
+    width: 60%
+    margin-bottom: 0.5rem
+    font-size: 0.5rem
+    background: #9696966c
+    box-shadow: 0 0 10px 0 #ffffff5e
+    backdrop-filter: blur( 4px )
+    border: 1px solid #ffffff2e
+    border-radius: 0.3rem
+
+    h1
+        margin-left: 1rem
+        color: #3a3a3a
+
+    label
+        margin: 0.5rem
+        font-size: 1rem
+        color: #3a3a3a
+
+ul
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 60%
+    height: 60%
+    margin: 0
+    padding: 0
+    background: #9696966c
+    box-shadow: 0 0 10px 0 #ffffff5e
+    backdrop-filter: blur( 4px )
+    border: 1px solid #ffffff2e
+    border-radius: 0.3rem
+    flex-wrap: wrap
+
+    li
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 3.5rem
+        height: 3.5rem
+        margin: 9px
+        color: white
+        border-radius: 50%
+        list-style: none
+        visibility: hidden
+        transition-duration: 0.1s
+        
+button
+    width: max-content
+    margin: 1rem
+    background: #f8f8f8a2
+    box-shadow: 0 0 10px 0 #ffffff5e
+    border: solid 1px #ffffff2e
+    border-radius: 3rem
+    color: #2b2b2b
+    font-size: 0.9rem
+
+.active
+    background-color: #ffffff
+    visibility: visible
+    box-shadow: 0 0 5px #2b0433, inset 0 0 20px #4b0658
+ 
+.hit
+    background-color: #b100d4
+    box-shadow: 0 0 5px #4d025c, inset 0 0 20px #35013f
+    
