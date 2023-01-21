@@ -9,49 +9,58 @@
 </head>
 <body>
     <div class="game">
-        <div id="pontuacao">
-            <h1>Pontos:</h1>
-            <label id="pontos">0</label>
+        <div id="menu">
+            <div id="score">
+                <h1>Pontos:</h1>
+                <label id="spots">0</label>
+            </div>
+            <button id="help" onclick="help()">?</button>
         </div>
-        <ul class="alvos">
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-            <li id="alvo"></li>
-        </ul>
-        <button onclick="start()">Começar</button>
+        <div class="target-game">
+            <ul class="targets">
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+                <li id="target"></li>
+            </ul>
+            <div id="notice">
+                <p>A cada 1 segundo aparecera um alvo na tela, clique para somar 1 ponto.</p>
+            </div>
+        </div>
+        <button id="start" onclick="start()">Começar</button>
+        <button id="finish" onclick="finish()">Pausar</button>
     </div>
     <script src="js/main.js"></script>
 </body>

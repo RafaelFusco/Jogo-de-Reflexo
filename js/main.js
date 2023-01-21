@@ -1,4 +1,6 @@
-let alvos = document.querySelectorAll("#alvo")
+//------------- SISTEMA DOS ALVOS -----------------
+
+let targets = document.querySelectorAll("#target")
 let n = 0
 
 function randomNumber(a, b) {
@@ -7,32 +9,61 @@ function randomNumber(a, b) {
 
 function active() {
     let result = randomNumber(0, 27)
-    alvos[result].classList.add("active")
+    targets[result].classList.add("active")
 
-    alvos.forEach(element => {
+    targets.forEach(element => {
         if (element.classList.contains("active")) {
             element.addEventListener("click", function () {
                 element.classList.add("hit")
 
-                let pontos = document.querySelector("#pontos")
+                let pontos = document.querySelector("#spots")
                 pontos.innerHTML = `${(n += 1)}` 
             },{once : true})
         }
     }); 
 }
 
-function start() {
-    let button = document.querySelector("button")
-    button.style.visibility = "hidden"
-    active()
+//------------- SISTEMA DE COMEÇAR E PAUSAR -----------------
 
-    setInterval(() => {
-        alvos.forEach(element => {
+let interval = setInterval(() => {
+        
+    if (startButton.style.display == "none") {
+
+        targets.forEach(element => {
             element.classList.remove("active")
             element.classList.remove("hit")
         });
         active()
-    }, 1000);
+    }else if (startButton.style.display == "block") {
+
+        element.classList.remove("active")
+        element.classList.remove("hit")
+        clearInterval(interval)
+    }
+        }, 1000);
+
+//------------- BOTOES -----------------
+
+function help() {
+    let alert = document.getElementById("notice")
+
+    if (alert.style.opacity == "1") {
+        alert.style.opacity = "0"
+    } else {
+        alert.style.opacity = "1"
+    }
+}
+    
+let startButton = document.getElementById("start")
+
+function start() {
+    startButton.style.display = "none"
+    finishButton.style.display = "block"
 }
 
+let finishButton = document.getElementById("finish")
 
+function finish() {
+    startButton.style.display = "block"
+    finishButton.style.display = "none"
+}
