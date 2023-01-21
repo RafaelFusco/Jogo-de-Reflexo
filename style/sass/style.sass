@@ -1,20 +1,16 @@
+@import 'mixins'
+
+
+
 //------------- GERAL -----------------
 
 html, body
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    margin: 0
-    padding: 0
-    
+    @include display-direc(flex, column, center, center)
+    @include size--marg(100%, 100%, 0, 0)
+ 
 .game
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    width: 100vw
-    height: 100vh
+    @include display-direc(flex, column, center, center)
+    @include size--marg(100vw, 100vh, 0, 0)
     background: url("../../img/fundo.jpg")
     background-repeat: no-repeat
     background-size: 100vw 100vh
@@ -22,83 +18,47 @@ html, body
 //------------- MENU -----------------
     
 #menu
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-    width: 60%
-    height: 5%
-    margin-bottom: 0.5rem
-    font-size: 0.5rem
-    background: #9696966c
-    box-shadow: 0 0 10px #ffffff5e
+    @include display-direc(flex, row, space-between, center)
+    @include size--marg(60%, 5%, 0.5rem 0, 0)
+    @include item-style(#9696966c, solid 1px #ffffff2e, 0.3rem, 0 0 10px #ffffff5e, inset 0 0 5px #ffffff5e)
     backdrop-filter: blur( 4px )
-    border: 1px solid #ffffff2e
-    border-radius: 0.3rem
+    font-size: 0.5rem
 
 #score
-    display: flex
-    flex-direction: row
-    align-items: center
+    @include display-direc(flex, row, baseline, center)
 
     h1
-        margin-left: 1rem
-        color: #ffffff
-        text-shadow: 0 0 2px black
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        @include size--marg(100%, 100%, 0 0 0 1rem, 0)
+        @include font-style(#fff, 1.1rem, 'Franklin Gothic Medium', 0 0 2px black)
 
     #spots
-        margin: 0.5rem
-        font-size: 1rem
-        color: #ffffff
-        text-shadow: 0 0 2px black
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        @include size--marg(100%, 100%, 0.1rem 0.5rem 0, 0)
+        @include font-style(#fff, 1rem, 'Franklin Gothic Medium', 0 0 2px black)
 
 #help
-    display: flex
-    align-items: center
+    @include display-direc(flex, baseline, center, center)
+    @include item-style(#9696966c, solid 1px #fff, 50%, none, none)
     height: 60%
     margin: 0 0.5rem
-    color: white
-    background: #9696966c
-    border: 1px solid white
-    border-radius: 50%
+    color: #fff
+    cursor: pointer
 
 //------------- TELA COM ALVOS -----------------
 .target-game
-    display: flex
-    flex-direction: row
-    justify-content: center
-    width: 100%
-    height: 62%
-    margin: 0
-    padding: 0
+    @include display-direc(flex, row, center, baseline)
+    @include size--marg(100%, 62%, 0, 0)
 
 ul
-    display: flex
-    flex-direction: row
-    justify-content: center
-    align-items: center
-    position: absolute
-    width: 60%
-    height: 60%
-    margin: 0
-    padding: 0
-    background: #9696966c
-    box-shadow: 0 0 10px #ffffff5e
+    @include display-direc(flex, row, center, center)
+    @include size--marg(60%, 60%, 0, 0)
+    @include item-style(#9696966c, solid 1px #ffffff2e, 0.3rem, 0 0 10px #ffffff5e, inset 0 0 5px #ffffff5e)
     backdrop-filter: blur( 4px )
-    border: 1px solid #ffffff2e
-    border-radius: 0.3rem
+    position: absolute
     flex-wrap: wrap
 
     li
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 3.5rem
-        height: 3.5rem
-        margin: 9px
-        color: white
+        @include display-direc(flex, baseline, center, center)
+        @include size--marg(3.5rem, 3.5rem, 9px, 0)
         border-radius: 50%
         list-style: none
         visibility: hidden
@@ -107,17 +67,10 @@ ul
 //------------- BOTOES -----------------
 
 #start, #finish
+    @include size--marg(max-content, max-content, 1rem, 0 0.3rem 0.1rem)
+    @include item-style(#bdbdbda2, solid 1px #ffffff2e, 3rem, 0 0 10px #ffffff5e, inset 0 0 5px #3b3b3b5e )
+    @include font-style(#fff, 0.9rem, 'Franklin Gothic Medium', 0 0 2px black)
     display: block
-    width: max-content
-    margin: 1rem
-    background: #bdbdbda2
-    box-shadow: 0 0 10px #ffffff5e
-    border: solid 1px #ffffff2e
-    border-radius: 3rem
-    color: #ffffff
-    text-shadow: 0 0 2px black
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    font-size: 0.9rem
     cursor: pointer
 
 #finish
@@ -126,33 +79,25 @@ ul
 //------------- ALVO & ALVO CLICADO -----------------
 
 .active
-    background-color: #ffffff
+    @include item-style(#fff, none, none, 0 0 5px #2b0433, inset 0 0 20px #4b0658)
     visibility: visible
-    box-shadow: 0 0 5px #2b0433, inset 0 0 20px #4b0658
     cursor: pointer
  
 .hit
-    background-color: #b100d4
-    box-shadow: 0 0 5px #4d025c, inset 0 0 20px #35013f
+    @include item-style(#b100d4, none, none, 0 0 5px #4d025c, inset 0 0 20px #35013f)
     cursor: pointer
     
 //------------- AVISO (AJUDA) -----------------
 
 #notice
+    @include item-style(#9696966c, solid 1px #fff, 0.5rem, 0 0 20px #fff, inset 0 0 5px #fff )
+    @include font-style(#fff, 1.1rem, 'Franklin Gothic Medium', 0 0 2px black)
     display: flex
     position: fixed
     left: 83%
     margin-right: 3rem 
-    background: #9696966c
-    box-shadow: 0 0 20px #fff, inset 0 0 5px #fff
-    border: solid 1px #fff
-    border-radius: 0.5rem
-    color: #ffffff
-    text-shadow: 0 0 2px black
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    font-size: 1.1rem
     opacity: 0
     transition-duration: 0.5s
 
 p
-    padding: 0 1rem
+    padding: 0 1rem    
