@@ -8,7 +8,7 @@ function randomNumber(a, b) {
 }
 
 function active() {
-    let result = randomNumber(0, 27)
+    let result = randomNumber(0, 35)
     targets[result].classList.add("active")
 
     targets.forEach(element => {
