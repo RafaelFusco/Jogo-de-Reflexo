@@ -124,27 +124,6 @@ ul li {
   visibility: hidden;
   transition-duration: 0.1s;
 }
-@media (max-width: 425px) {
-  ul li {
-    width: 1.9rem;
-    height: 1.9rem;
-    margin: 0rem 0.5rem;
-  }
-}
-@media (max-width: 280px) {
-  ul li {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 0rem 0.5rem;
-  }
-}
-@media (max-width: 540px) {
-  ul li {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0rem 0.8rem;
-  }
-}
 
 #start, #finish {
   width: max-content;
@@ -195,8 +174,8 @@ ul li {
   text-shadow: 0 0 2px black;
   display: flex;
   position: fixed;
-  left: 83%;
   margin-right: 3rem;
+  left: 83%;
   opacity: 0;
   transition-duration: 0.5s;
 }
