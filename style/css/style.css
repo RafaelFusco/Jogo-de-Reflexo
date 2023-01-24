@@ -124,6 +124,34 @@ ul li {
   visibility: hidden;
   transition-duration: 0.1s;
 }
+@media (max-width: 540px) {
+  ul li {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0rem 0.2rem;
+  }
+}
+@media (max-width: 425px) {
+  ul li {
+    width: 1.9rem;
+    height: 1.9rem;
+    margin: 0rem 0.5rem;
+  }
+}
+@media (max-width: 340px) {
+  ul li {
+    width: 2rem;
+    height: 2rem;
+    margin: 0rem 0.2rem;
+  }
+}
+@media (max-width: 280px) {
+  ul li {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0rem 0.2rem;
+  }
+}
 
 #start, #finish {
   width: max-content;
