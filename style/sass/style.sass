@@ -43,6 +43,7 @@ html, body
     cursor: pointer
 
 //------------- TELA COM ALVOS -----------------
+    
 .target-game
     @include display-direc(flex, row, center, baseline)
     @include size--marg(100%, 62%, 0, 0)
@@ -63,22 +64,28 @@ ul
         visibility: hidden
         transition-duration: 0.1s
 
-        @include mobile
+//------------- ALVO RESPONSIVO -----------------
+
+        @include mobile-1
+            width: 2.5rem
+            height: 2.5rem
+            margin: 0rem 0.2rem
+
+        @include mobile-2
             width: 1.9rem
             height: 1.9rem
             margin: 0rem 0.5rem
 
-        @include mobile-2
-            width: 1.5rem
-            height: 1.5rem
-            margin: 0rem 0.5rem
-
         @include mobile-3
-            width: 2.5rem
-            height: 2.5rem
-            margin: 0rem 0.8rem
+            width: 2rem
+            height: 2rem
+            margin: 0rem 0.2rem
 
- 
+        @include mobile-4
+            width: 1.8rem
+            height: 1.8rem
+            margin: 0rem 0.2rem
+
 //------------- BOTOES -----------------
 
 #start, #finish
@@ -109,8 +116,8 @@ ul
     @include font-style(#fff, 1.1rem, 'Franklin Gothic Medium', 0 0 2px black)
     display: flex
     position: fixed
-    left: 83%
     margin-right: 3rem 
+    left: 83%
     opacity: 0
     transition-duration: 0.5s
 
